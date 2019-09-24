@@ -1,6 +1,11 @@
-cmake_minimum_required(VERSION 3.10)
-project(SortMethods)
+cmake_minimum_required(VERSION 3.13)
+project(Ordenar)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(SortMethods main.cpp Sort.h Sort.cpp Sort_Test.cpp)
+include_directories(.)
+
+add_executable(Ordenar
+        main.cpp
+        Sorter.cpp
+        Sorter.h quickSort.h mergeSort.h auxFunctions.h)
