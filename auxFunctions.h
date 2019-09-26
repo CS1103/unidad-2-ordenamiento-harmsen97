@@ -5,8 +5,11 @@
 #ifndef ORDENAR_AUXFUNCTIONS_H
 #define ORDENAR_AUXFUNCTIONS_H
 
-#include <vector>
-#include <iostream>
+
+#include <iomanip>
+
+
+#include "Sort.h"
 
 template <typename T>
 void swap(T &a, T &b){
@@ -22,5 +25,13 @@ void print(std::vector<T> &values){
     for (auto & i:values)
         std::cout<<i<<" ";
     std::cout<<std::endl;
+}
+
+template <typename T>
+double stopWatchMerge(Sort <T>& sort){
+    clock_t start = clock();
+    sort.MergeSort();
+    clock_t end = clock();
+    return ((double )(end - start)/CLOCKS_PER_SEC);
 }
 #endif //ORDENAR_AUXFUNCTIONS_H
