@@ -7,7 +7,7 @@
 
 
 #include <iomanip>
-
+#include <fstream>
 
 #include "Sort.h"
 
@@ -33,5 +33,42 @@ double stopWatchMerge(Sort <T>& sort){
     sort.MergeSort();
     clock_t end = clock();
     return ((double )(end - start)/CLOCKS_PER_SEC);
+}
+
+template <typename T>
+double stopWatchQuick(Sort <T>& sort){
+    clock_t start = clock();
+    sort.QuickSort();
+    clock_t end = clock();
+    return ((double )(end - start)/CLOCKS_PER_SEC);
+}
+
+template <typename T>
+double stopWatchHeap(Sort <T>& sort){
+    clock_t start = clock();
+    sort.HeapSort();
+    clock_t end = clock();
+    return ((double )(end - start)/CLOCKS_PER_SEC);
+}
+
+template <typename T>
+double stopWatchShell(Sort <T>& sort){
+    clock_t start = clock();
+    sort.ShellSort();
+    clock_t end = clock();
+    return ((double )(end - start)/CLOCKS_PER_SEC);
+}
+
+template <typename T>
+std::vector<std::vector<T> read_csv(std::string filename){
+    std:fstream input(filename, std::ios::in);
+
+    std::vector<std::vector<T>> out;
+    std::vector <T> row;
+    std::string word;
+    while(input<<word<<','){
+        
+    }
+
 }
 #endif //ORDENAR_AUXFUNCTIONS_H
