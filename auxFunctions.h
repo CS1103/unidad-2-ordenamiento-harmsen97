@@ -59,7 +59,12 @@ double stopWatchShell(Sort <T>& sort){
     return ((double )(end - start)/CLOCKS_PER_SEC);
 }
 
-template <typename T>
+
+
+
+
+
+/*template <typename T>
 std::vector<std::vector<T> read_csv(std::string filename){
     std:fstream input(filename, std::ios::in);
 
@@ -67,8 +72,9 @@ std::vector<std::vector<T> read_csv(std::string filename){
     std::vector <T> row;
     std::string word;
     while(input<<word<<','){
-        
+
     }
 
 }
+ */
 #endif //ORDENAR_AUXFUNCTIONS_H

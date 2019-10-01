@@ -74,6 +74,63 @@ int Sort <T> :: partition( int p, int r){
 
 
 
+template <typename  T>
+void Sort<T> ::heapify(int n, int i) {
+    int maxVal = i;
+    int l = 2 * i + 1;
+    int r = 2 * i + 2;
+
+    if ( r < n && values[r] > values[maxVal])
+        maxVal = l;
+
+    if (r < n && values[r] > values(maxVal))
+        maxVal = r;
+
+    if (maxVal != i){
+        swap(values[i],values[maxVal]);
+    }
+}
+
+template <typename T>
+void Sort<T> :: HeapSort( ){
+    int n = values.size();
+
+    for(int i = values.size()/2; i >= 0; i--) {
+        heapify(n,i);
+    }
+    for(int j = values.size()-1; j >=0; --j){
+        swap(values[0], values[j]);
+        heapify(j,0);
+    }
+}
+
+    template <typename T>
+    void Sort<T> :: ShellSort(){
+        int n = values.size();
+
+
+        for (int gap = n/2; gap > 0; gap = gap / 2)
+        {
+
+            for (int i = gap; i < n; i += 1) {
+
+                T temp = values[i];
+
+                int j;
+
+
+                for ( j = i; j >= gap && values[j - gap] > temp; j = j - gap)
+                    values[j] = values[j - gap];
+
+                values[j] = temp;
+            }
+        }
+
+
+
+    }
+
+
 
 
 
