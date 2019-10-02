@@ -1,6 +1,4 @@
-//
-// Created by Jeronimo on 2019-10-01.
-//
+
 
 #ifndef ORDENAR_RECORD_H
 #define ORDENAR_RECORD_H

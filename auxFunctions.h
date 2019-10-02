@@ -1,46 +1,35 @@
-//
-// Created by Jeronimo on 2019-09-24.
-//
+
 
 #ifndef ORDENAR_AUXFUNCTIONS_H
 #define ORDENAR_AUXFUNCTIONS_H
 
-
 #include <iomanip>
 #include <fstream>
+#include <cstring>
+#include "Record.h"
 
-#include "Sort.h"
 
 template <typename T>
-void swap(T &a, T &b){
-    T temp = a;
+void swap(T& a, T& b){
+    T tmp = a;
     a = b;
-    b = temp;
-}
-
-
-
-template <typename T>
-void print(std::vector<T> &values){
-    for (auto & i:values)
-        std::cout<<i<<" ";
-    std::cout<<std::endl;
+    b = tmp;
 }
 
 template <typename T>
-double stopWatchMerge(Sort <T>& sort){
+double stopWatchMerge(Sort<T>& sort){
     clock_t start = clock();
     sort.MergeSort();
     clock_t end = clock();
-    return ((double )(end - start)/CLOCKS_PER_SEC);
+    return ((double)(end-start)/CLOCKS_PER_SEC);
 }
 
 template <typename T>
-double stopWatchQuick(Sort <T>& sort){
+double stopWatchQuick(Sort<T>& sort){
     clock_t start = clock();
     sort.QuickSort();
     clock_t end = clock();
-    return ((double )(end - start)/CLOCKS_PER_SEC);
+    return ((double)(end-start)/CLOCKS_PER_SEC);
 }
 
 template <typename T>
@@ -59,22 +48,4 @@ double stopWatchShell(Sort <T>& sort){
     return ((double )(end - start)/CLOCKS_PER_SEC);
 }
 
-
-
-
-
-
-/*template <typename T>
-std::vector<std::vector<T> read_csv(std::string filename){
-    std:fstream input(filename, std::ios::in);
-
-    std::vector<std::vector<T>> out;
-    std::vector <T> row;
-    std::string word;
-    while(input<<word<<','){
-
-    }
-
-}
- */
 #endif //ORDENAR_AUXFUNCTIONS_H
