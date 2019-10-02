@@ -55,15 +55,42 @@ int main(){
     for(int i=1;i<n;++i)
         country[i-1] = records[i]->year;
 
-    Sort s(country);
+    Sort s_merge(country);
+    Sort s_heap(country);
+    Sort s_shell(country);
 
-    s.MergeSort();
+    // Merge Sort
 
-    fstream out("../results.csv", std::ios::out);
-    for(auto&i:s.values)
+    s_merge.MergeSort();
+
+    fstream out("../results/results_merge_year.csv", std::ios::out);
+    for(auto&i:s_merge.values)
         out<<i<<'\n';
 
     out.close();
+
+    // Heap Sort
+
+    s_heap.HeapSort();
+
+    out.open("../results/results_heap_year.csv", std::ios::out);
+
+    for(auto&i:s_merge.values)
+        out<<i<<'\n';
+
+    out.close();
+
+    // Shell Sort
+
+    s_shell.ShellSort();
+
+    out.open("../results/results_shell_year.csv", std::ios::out);
+
+    for(auto&i:s_merge.values)
+        out<<i<<'\n';
+
+    out.close();
+
     return 0;
 
     /*
